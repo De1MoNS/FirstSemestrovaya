@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1000</width>
+                <height>600</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Менеджер киноколлекции</string>
+        </property>
+        <widget class="QWidget" name="centralwidget">
+            <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                    <widget class="QLabel" name="titleLabel">
+                        <property name="font">
+                            <font>
+                                <pointsize>16</pointsize>
+                                <bold>true</bold>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Менеджер киноколлекции</string>
+                        </property>
+                        <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                        </property>
+                    </widget>
+                </item>
+                <item>
+                    <layout class="QHBoxLayout" name="controlLayout">
+                        <item>
+                            <widget class="QPushButton" name="addMovieBtn">
+                                <property name="text">
+                                    <string>Добавить фильм</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QPushButton" name="editMovieBtn">
+                                <property name="text">
+                                    <string>Редактировать</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QPushButton" name="deleteMovieBtn">
+                                <property name="text">
+                                    <string>Удалить</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <spacer name="horizontalSpacer">
+                                <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                    <size>
+                                        <width>40</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </item>
+                        <item>
+                            <widget class="QPushButton" name="refreshBtn">
+                                <property name="text">
+                                    <string>Обновить</string>
+                                </property>
+                            </widget>
+                        </item>
+                    </layout>
+                </item>
+                <item>
+                    <layout class="QHBoxLayout" name="filtersLayout">
+                        <item>
+                            <widget class="QLabel" name="searchLabel">
+                                <property name="text">
+                                    <string>Поиск:</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QLineEdit" name="searchEdit">
+                                <property name="placeholderText">
+                                    <string>Название, режиссер...</string>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>200</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QLabel" name="genreLabel">
+                                <property name="text">
+                                    <string>Жанр:</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QComboBox" name="genreCombo"/>
+                        </item>
+                        <item>
+                            <widget class="QLabel" name="yearFromLabel">
+                                <property name="text">
+                                    <string>Год от:</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QSpinBox" name="yearFromSpin"/>
+                        </item>
+                        <item>
+                            <widget class="QLabel" name="yearToLabel">
+                                <property name="text">
+                                    <string>до:</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QSpinBox" name="yearToSpin"/>
+                        </item>
+                        <item>
+                            <widget class="QLabel" name="watchedLabel">
+                                <property name="text">
+                                    <string>Просмотрено:</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QComboBox" name="watchedCombo"/>
+                        </item>
+                        <item>
+                            <spacer name="horizontalSpacer_2">
+                                <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                    <size>
+                                        <width>40</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </item>
+                    </layout>
+                </item>
+                <item>
+                    <widget class="QTabWidget" name="tabWidget">
+                        <property name="currentIndex">
+                            <number>0</number>
+                        </property>
+                        <widget class="QWidget" name="moviesTab">
+                            <attribute name="title">
+                                <string>Фильмы</string>
+                            </attribute>
+                            <layout class="QVBoxLayout" name="verticalLayout_2">
+                                <item>
+                                    <widget class="QTableView" name="moviesTable">
+                                        <property name="alternatingRowColors">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="selectionBehavior">
+                                            <enum>QAbstractItemView::SelectRows</enum>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </widget>
+                        <widget class="QWidget" name="statsTab">
+                            <attribute name="title">
+                                <string>Статистика</string>
+                            </attribute>
+                            <layout class="QVBoxLayout" name="verticalLayout_3">
+                                <item>
+                                    <widget class="QGroupBox" name="statsGroup">
+                                        <property name="title">
+                                            <string>Статистика</string>
+                                        </property>
+                                        <layout class="QFormLayout" name="formLayout">
+                                            <item row="0" column="0">
+                                                <widget class="QLabel" name="totalMoviesLabel">
+                                                    <property name="text">
+                                                        <string>Всего фильмов:</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item row="0" column="1">
+                                                <widget class="QLabel" name="totalMoviesValue">
+                                                    <property name="text">
+                                                        <string>0</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item row="1" column="0">
+                                                <widget class="QLabel" name="watchedMoviesLabel">
+                                                    <property name="text">
+                                                        <string>Просмотрено:</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item row="1" column="1">
+                                                <widget class="QLabel" name="watchedMoviesValue">
+                                                    <property name="text">
+                                                        <string>0</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item row="2" column="0">
+                                                <widget class="QLabel" name="avgRatingLabel">
+                                                    <property name="text">
+                                                        <string>Средний рейтинг:</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item row="2" column="1">
+                                                <widget class="QLabel" name="avgRatingValue">
+                                                    <property name="text">
+                                                        <string>0.0</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                        </layout>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QTextEdit" name="statsText">
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>0</width>
+                                                <height>300</height>
+                                            </size>
+                                        </property>
+                                        <property name="readOnly">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </widget>
+                    </widget>
+                </item>
+            </layout>
+        </widget>
+        <widget class="QStatusBar" name="statusbar"/>
+    </widget>
+    <resources/>
+    <connections/>
+</ui>
